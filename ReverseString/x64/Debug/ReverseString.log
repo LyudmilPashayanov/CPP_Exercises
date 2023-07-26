@@ -1,0 +1,3 @@
+﻿  ReverseString.cpp
+C:\Users\lulu\source\repos\UdemyCourse\ReverseString\ReverseString.cpp(9,11): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+  ReverseString.vcxproj -> C:\Users\lulu\source\repos\UdemyCourse\x64\Debug\ReverseString.exe

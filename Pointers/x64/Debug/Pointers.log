@@ -1,0 +1,4 @@
+﻿  Pointers.cpp
+C:\Users\lulu\source\repos\UdemyCourse\Pointers\Pointers.cpp(43,33): warning C4267: 'initializing': conversion from 'size_t' to 'int', possible loss of data
+C:\Users\lulu\source\repos\UdemyCourse\Pointers\Pointers.cpp(43,25): warning C4267: 'initializing': conversion from 'size_t' to 'const int', possible loss of data
+  Pointers.vcxproj -> C:\Users\lulu\source\repos\UdemyCourse\x64\Debug\Pointers.exe
