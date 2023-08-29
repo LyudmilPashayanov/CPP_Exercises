@@ -1,2 +1,3 @@
 ﻿  ConstructorExamples(Move,Copy,Default).cpp
-  ConstructorExamples(Move,Copy,Default).vcxproj -> C:\Users\lulu\source\repos\UdemyCourse\x64\Debug\ConstructorExamples(Move,Copy,Default).exe
+  LINK : F:\Visual Studio Personal Projects\udemy course\CPP_Exercises\x64\Debug\ConstructorExamples(Move,Copy,Default).exe not found or not built by the last incremental link; performing full link
+  ConstructorExamples(Move,Copy,Default).vcxproj -> F:\Visual Studio Personal Projects\udemy course\CPP_Exercises\x64\Debug\ConstructorExamples(Move,Copy,Default).exe

@@ -1,3 +1,5 @@
 ﻿  MyString.cpp
-C:\Users\lulu\source\repos\UdemyCourse\OperatorOverloadingExcersice\MyString.cpp(135,20): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
-  OperatorOverloadingExcersice.vcxproj -> C:\Users\lulu\source\repos\UdemyCourse\x64\Debug\OperatorOverloadingExcersice.exe
+F:\Visual Studio Personal Projects\udemy course\CPP_Exercises\OperatorOverloadingExcersice\MyString.cpp(135,20): warning C4267: 'return': conversion from 'size_t' to 'int', possible loss of data
+  OperatorOverloadingExcersice.cpp
+  Generating Code...
+  OperatorOverloadingExcersice.vcxproj -> F:\Visual Studio Personal Projects\udemy course\CPP_Exercises\x64\Debug\OperatorOverloadingExcersice.exe
