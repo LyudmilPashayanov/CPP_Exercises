@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="PolymorphismAssignment.cpp">
+    <ClCompile Include="BankSimulator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Account.cpp">
@@ -33,7 +33,13 @@
     <ClCompile Include="TrustAccount.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="I_Printable.cpp">
+    <ClCompile Include="IPersistable.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="IllegalBalanceException.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InsufficientFundsException.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -53,7 +59,13 @@
     <ClInclude Include="TrustAccount.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="IPrintable.h">
+    <ClInclude Include="IPersistable.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="IllegalBalanceException.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InsufficientFundsException.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

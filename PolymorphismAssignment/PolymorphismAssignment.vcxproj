@@ -24,6 +24,7 @@
     <ProjectGuid>{1dd6d9b4-5471-4dc2-a459-d9098076716c}</ProjectGuid>
     <RootNamespace>PolymorphismAssignment</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
+    <ProjectName>Bank Simulator</ProjectName>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
@@ -130,8 +131,10 @@
     <ClCompile Include="Account.cpp" />
     <ClCompile Include="AccountsUtil.cpp" />
     <ClCompile Include="CheckingAccount.cpp" />
-    <ClCompile Include="I_Printable.cpp" />
-    <ClCompile Include="PolymorphismAssignment.cpp" />
+    <ClCompile Include="IllegalBalanceException.cpp" />
+    <ClCompile Include="InsufficientFundsException.cpp" />
+    <ClCompile Include="IPersistable.cpp" />
+    <ClCompile Include="BankSimulator.cpp" />
     <ClCompile Include="SavingsAccount.cpp" />
     <ClCompile Include="TrustAccount.cpp" />
   </ItemGroup>
@@ -139,7 +142,9 @@
     <ClInclude Include="Account.h" />
     <ClInclude Include="AccountsUtil.h" />
     <ClInclude Include="CheckingAccount.h" />
-    <ClInclude Include="IPrintable.h" />
+    <ClInclude Include="IllegalBalanceException.h" />
+    <ClInclude Include="InsufficientFundsException.h" />
+    <ClInclude Include="IPersistable.h" />
     <ClInclude Include="SavingsAccount.h" />
     <ClInclude Include="TrustAccount.h" />
   </ItemGroup>

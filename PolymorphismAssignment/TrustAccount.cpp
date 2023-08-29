@@ -1,7 +1,10 @@
 #include "TrustAccount.h"
+#include "InsufficientFundsException.h"
 
-TrustAccount::TrustAccount(string accountName, double accountBalance, double accountIntRate) : SavingsAccount(accountIntRate, accountName, accountBalance)
+TrustAccount::TrustAccount(std::string accountName, double accountBalance, double accountIntRate, int accountWithdrawCounter) : SavingsAccount(accountName, accountBalance, accountIntRate), withdrawCounter{ accountWithdrawCounter }
 {
+	std::cout << " +++ this is a Trust account"<<std::endl;
+	type = trust;
 }
 
 bool TrustAccount::Deposit(double moneyToAdd)
@@ -18,20 +21,25 @@ bool TrustAccount::Withdraw(double moneyToGet)
 	withdrawCounter++;
 	if (withdrawCounter >= maxWithdraws)
 	{
-		std::cout << "You can't WITHDRAW more than 3 times.";
-		return false;
+		std::cout << "You can't WITHDRAW more than 3 times." << std::endl;
+		throw InsufficientFundsException();
 	}
-	double maxWithdrawMoney = balance * (maxWithdrawPercentage / 100.0);
+	double maxWithdrawMoney = GetBalance() * (maxWithdrawPercentage / 100.0);
 	if (moneyToGet > maxWithdrawMoney)
 	{
-		std::cout << "You can't WITHDRAW more than " << maxWithdrawPercentage << "% (" << maxWithdrawMoney << "$) of your current balance.";
-		return false;
+		std::cout << "You can't WITHDRAW more than " << maxWithdrawPercentage << "% (" << maxWithdrawMoney << "$) of your current balance." << std::endl;
+		throw InsufficientFundsException();
 	}
 
 	return SavingsAccount::Withdraw(moneyToGet);
 }
 
-void TrustAccount::Print(std::ostream& os) const
+std::string TrustAccount::Print() const
 {
-	os << "Trust account is bla bla ";
+	return "Trust account [" + GetName() + "] with funds of: " + std::to_string(GetBalance());
+}
+
+void TrustAccount::ToTextData(std::ostream& os) const
+{
+	os << type << " \"" << GetName() << "\" " << GetBalance() << " " << GetIntRate() << " " << withdrawCounter;
 }

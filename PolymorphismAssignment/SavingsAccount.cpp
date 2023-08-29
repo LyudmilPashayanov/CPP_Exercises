@@ -1,8 +1,8 @@
 #include "SavingsAccount.h"
 
-SavingsAccount::SavingsAccount(double accountIntRate, std::string accountName, double accountBalance) : Account(accountName, accountBalance), intRate{ accountIntRate }
+SavingsAccount::SavingsAccount(std::string accountName, double accountBalance, double accountIntRate) : Account(accountName, accountBalance, savings), intRate{ accountIntRate }
 {
-	std::cout << "Savings account created with name: '" << name << "', balance: '" << balance << "' and Interest Rate of: " << intRate << std::endl;
+	std::cout << "Savings account created with name: '" << GetName() << "', balance: '" << GetBalance() << "' and Interest Rate of: " << intRate << std::endl;
 }
 
 bool SavingsAccount::Deposit(double moneyToAdd)
@@ -16,7 +16,12 @@ bool SavingsAccount::Withdraw(double moneyToGet)
 	return Account::Withdraw(moneyToGet);
 }
 
-void SavingsAccount::Print(std::ostream& os) const
+std::string SavingsAccount::Print() const
 {
-	os << "Savings account is bla bla ";
+	return "Savings account [" + GetName() +"] with funds of: " + std::to_string(GetBalance());
+}
+
+void SavingsAccount::ToTextData(std::ostream& os) const
+{
+	os << type << " \"" << GetName() << "\" " << GetBalance() << " " << GetIntRate();
 }
