@@ -21,12 +21,15 @@ int main()
         std::cout << std::endl << std::endl << std::endl <<"Menu:" << std::endl;
         std::cout << "1. Read currently saved accounts." << std::endl;
         std::cout << "2. Create and add an account." << std::endl;
-        std::cout << "3. Deposit to all accounts." << std::endl;
-        std::cout << "4. Withdraw from all accounts." << std::endl;
-        std::cout << "5. Delete all accounts." << std::endl;
-        std::cout << "6. Exit" << std::endl;
+        std::cout << "3. Deposit to account of your choice." << std::endl;
+        std::cout << "4. Withdraw from an account of your choice." << std::endl;
+        std::cout << "5. Deposit to all accounts." << std::endl;
+        std::cout << "6. Withdraw from all accounts." << std::endl;
+        std::cout << "7. Delete all accounts." << std::endl;
+        std::cout << "8. Save your account changes." << std::endl;
+        std::cout << "9. Exit" << std::endl;
 
-        std::cout << "Enter your choice (1-5): ";
+        std::cout << "Enter your choice (1-9): ";
         if (!(std::cin >> choice)) {
             std::cout << "Invalid input. Please enter a number." << std::endl;
             std::cin.clear();
@@ -40,17 +43,14 @@ int main()
             break;
         case 2:
             vec.push_back(std::move(CreateAccount()));
-            WriteFileWithAccounts(vec);
             break;
         case 3:
-            Deposit(vec, RequestBalanceFromUser());
-            WriteFileWithAccounts(vec);
+            DepositToAccount(GetAccountFromVector(vec));
             break;
         case 4:
             try
             {
-                Withdraw(vec, RequestBalanceFromUser());
-                WriteFileWithAccounts(vec);
+                WithdrawFromAccount(GetAccountFromVector(vec));
             }
             catch (const InsufficientFundsException& ex)
             {
@@ -58,10 +58,27 @@ int main()
             }
             break;
         case 5:
-            vec.clear();
-            WriteFileWithAccounts(vec);
+            std::cout << "You are about to Deposit money to all accounts. ";
+            DepositToAccountsInVector(vec, RequestBalanceFromUser());
             break;
         case 6:
+            try
+            {
+                std::cout << "You are about to Withdraw money from all accounts. ";
+                WithdrawFromAccountsInVector(vec, RequestBalanceFromUser());
+            }
+            catch (const InsufficientFundsException& ex)
+            {
+                std::cerr << ex.what() << std::endl;
+            }
+            break;
+        case 7:
+            vec.clear();
+            break;
+        case 8:
+            WriteFileWithAccounts(vec);
+            break;
+        case 9:
             std::cout << "Exiting..." << std::endl;
             return 0;
         default:

@@ -36,10 +36,12 @@ public:
 
 	virtual bool Deposit(double moneyToAdd) = 0;
 	virtual bool Withdraw(double moneyToGet) = 0;
-	virtual void operator+=(double moneyToAdd);
-	virtual void operator-=(double moneyToGet);
 	virtual std::string Print() const override=0;
 	virtual void ToTextData(std::ostream& os) const override=0;
 
+	virtual void operator+=(double moneyToAdd);
+	virtual void operator-=(double moneyToGet);
+	virtual bool operator<(const Account& rhs) const;
+	virtual bool operator>(const Account& rhs) const;
 };
 

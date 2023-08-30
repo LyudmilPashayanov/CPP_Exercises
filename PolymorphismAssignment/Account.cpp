@@ -9,7 +9,6 @@ Account::Account(std::string accountName, double accountBalance, AccountType acc
 	}
 }
 
-
 bool Account::Deposit(double moneyToAdd)
 {
 	data.balance += moneyToAdd;
@@ -20,21 +19,11 @@ bool Account::Withdraw(double moneyToGet)
 {
 	if (data.balance - moneyToGet < 0)
 	{
-		throw InsufficientFundsException();
+		throw InsufficientFundsException("You have insufficient funds. You can't withdraw money from account with name: " + GetName());
 	}
 	data.balance -= moneyToGet;
 	return true;
 }
-
-//std::string Account::Print() const
-//{
-//	return "basic account";
-//}
-//
-//void Account::ToTextData(std::ostream& os) const
-//{
-//	os << type << " \"" << GetName() << "\" " << GetBalance();
-//}
 
 void Account::operator+=(double moneyToAdd)
 {
@@ -44,6 +33,20 @@ void Account::operator+=(double moneyToAdd)
 void Account::operator-=(double moneyToGet)
 {
 	this->Withdraw(moneyToGet);
+}
+
+void Account::ToTextData(std::ostream& os) const
+{
+}
+
+bool Account::operator<(const Account& rhs) const
+{
+	return this->GetBalance() < rhs.GetBalance();
+}
+
+bool Account::operator>(const Account& rhs) const
+{
+	return this->GetBalance() > rhs.GetBalance();
 }
 
 

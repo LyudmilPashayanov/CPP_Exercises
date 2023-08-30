@@ -21,14 +21,13 @@ bool TrustAccount::Withdraw(double moneyToGet)
 	withdrawCounter++;
 	if (withdrawCounter >= maxWithdraws)
 	{
-		std::cout << "You can't WITHDRAW more than 3 times." << std::endl;
-		throw InsufficientFundsException();
+		throw InsufficientFundsException("You can't WITHDRAW more than 3 times from account with name: " + GetName());
 	}
 	double maxWithdrawMoney = GetBalance() * (maxWithdrawPercentage / 100.0);
 	if (moneyToGet > maxWithdrawMoney)
 	{
-		std::cout << "You can't WITHDRAW more than " << maxWithdrawPercentage << "% (" << maxWithdrawMoney << "$) of your current balance." << std::endl;
-		throw InsufficientFundsException();
+		std::string errorMessage = "You can't WITHDRAW more than " + std::to_string(maxWithdrawPercentage) + "% (" + std::to_string(maxWithdrawMoney) + "$) of your current balance from account: " + GetName();
+		throw InsufficientFundsException(errorMessage);
 	}
 
 	return SavingsAccount::Withdraw(moneyToGet);
