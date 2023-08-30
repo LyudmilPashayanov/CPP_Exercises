@@ -3,7 +3,7 @@
 
 TrustAccount::TrustAccount(std::string accountName, double accountBalance, double accountIntRate, int accountWithdrawCounter) : SavingsAccount(accountName, accountBalance, accountIntRate), withdrawCounter{ accountWithdrawCounter }
 {
-	std::cout << " +++ this is a Trust account"<<std::endl;
+	std::cout << "Created as a Trust account"<<std::endl;
 	type = trust;
 }
 

@@ -13,60 +13,78 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\Accounts">
+      <UniqueIdentifier>{2ac431cb-6f56-4d58-8ca8-3514c14a0359}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\CustomExceptions">
+      <UniqueIdentifier>{472a576f-624f-4b3b-b102-ccbab2d8aa17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\Utilities">
+      <UniqueIdentifier>{9282de13-5ff3-4c85-9c28-17c553bb3c5b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Accounts">
+      <UniqueIdentifier>{489ffbd2-7deb-470d-960d-f29592bcd846}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Utilities">
+      <UniqueIdentifier>{90d762f0-0175-44df-a51e-8a7a8da17f2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\CustomExceptions">
+      <UniqueIdentifier>{db7831b1-f1d1-47c8-bd6c-34f1e982da2b}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="BankSimulator.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Account.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="AccountsUtil.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Accounts</Filter>
     </ClCompile>
     <ClCompile Include="CheckingAccount.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Accounts</Filter>
     </ClCompile>
     <ClCompile Include="SavingsAccount.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Accounts</Filter>
     </ClCompile>
     <ClCompile Include="TrustAccount.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Accounts</Filter>
+    </ClCompile>
+    <ClCompile Include="AccountsUtil.cpp">
+      <Filter>Source Files\Utilities</Filter>
     </ClCompile>
     <ClCompile Include="IPersistable.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\Utilities</Filter>
     </ClCompile>
     <ClCompile Include="IllegalBalanceException.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\CustomExceptions</Filter>
     </ClCompile>
     <ClCompile Include="InsufficientFundsException.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Source Files\CustomExceptions</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Account.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="AccountsUtil.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Accounts</Filter>
     </ClInclude>
     <ClInclude Include="CheckingAccount.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Accounts</Filter>
     </ClInclude>
     <ClInclude Include="SavingsAccount.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Accounts</Filter>
     </ClInclude>
     <ClInclude Include="TrustAccount.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="IPersistable.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="IllegalBalanceException.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\Accounts</Filter>
     </ClInclude>
     <ClInclude Include="InsufficientFundsException.h">
-      <Filter>Header Files</Filter>
+      <Filter>Header Files\CustomExceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="IllegalBalanceException.h">
+      <Filter>Header Files\CustomExceptions</Filter>
+    </ClInclude>
+    <ClInclude Include="IPersistable.h">
+      <Filter>Header Files\Utilities</Filter>
+    </ClInclude>
+    <ClInclude Include="AccountsUtil.h">
+      <Filter>Header Files\Utilities</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
