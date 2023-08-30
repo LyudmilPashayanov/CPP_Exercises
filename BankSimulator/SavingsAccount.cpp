@@ -1,3 +1,6 @@
+#include <iostream>
+#include <sstream>
+#include <iomanip>
 #include "SavingsAccount.h"
 
 SavingsAccount::SavingsAccount(std::string accountName, double accountBalance, double accountIntRate) : Account(accountName, accountBalance, savings), intRate{ accountIntRate }
@@ -18,7 +21,9 @@ bool SavingsAccount::Withdraw(double moneyToGet)
 
 std::string SavingsAccount::Print() const
 {
-	return "Savings account [" + GetName() +"] with funds of: " + std::to_string(GetBalance());
+	std::stringstream formattedBalance;
+	formattedBalance << std::fixed << std::setprecision(2) << GetBalance();
+	return "Savings account [" + GetName() +"] with funds of: " + formattedBalance.str()+" $.";
 }
 
 void SavingsAccount::ToTextData(std::ostream& os) const

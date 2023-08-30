@@ -65,6 +65,10 @@ void Display(std::vector<std::unique_ptr<Account>>& accounts)
 {
 	int i = 0;
 	std::cout << std::endl << std::setw(51)  << "------------------------------------------" << std::endl;
+	if (accounts.size() == 0) {
+		std::cout << std::setw(48) << "THERE ARE NO ACCOUNTS IN YOUR SYSTEM" << std::endl;
+		std::cout << std::setw(55) << "You can create accounts from the console menu." << std::endl;
+	}
 	for (std::unique_ptr<Account> &acc : accounts)
 	{
 		std::cout  << std::setw(10) << "|" << ++i << ". " << acc->Print() << std::endl;
@@ -96,7 +100,7 @@ std::vector<std::unique_ptr<Account>> ReadFileWithAccounts()
 	std::ifstream istream {"accounts.txt"};
 	if (!istream)
 	{
-		std::cout << "Error opening file." << std::endl;
+		std::cout << "'Accounts' file doesn't exist." << std::endl;
 	}
 	else
 	{

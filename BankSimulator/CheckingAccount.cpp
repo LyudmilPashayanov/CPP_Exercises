@@ -1,3 +1,6 @@
+#include <iostream>
+#include <sstream>
+#include <iomanip> 
 #include "CheckingAccount.h"
 
 CheckingAccount::CheckingAccount(std::string accountName, double accountBalance) : Account(accountName, accountBalance,checking)
@@ -18,7 +21,9 @@ bool CheckingAccount::Deposit(double moneyToAdd)
 
 std::string CheckingAccount::Print() const
 {
-	return "Checking account [" + GetName() + "] with funds of: " + std::to_string(GetBalance());
+	std::stringstream formattedBalance;
+	formattedBalance << std::fixed << std::setprecision(2) << GetBalance();
+	return "Checking account [" + GetName() + "] with funds of: " + formattedBalance.str() + " $.";
 }
 
 void CheckingAccount::ToTextData(std::ostream& os) const

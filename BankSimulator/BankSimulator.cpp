@@ -19,14 +19,14 @@ int main()
     int choice;
     while (true) {
         std::cout << std::endl << std::endl << std::endl <<"Menu:" << std::endl;
-        std::cout << "1. Read currently saved accounts." << std::endl;
+        std::cout << "1. Read current accounts." << std::endl;
         std::cout << "2. Create and add an account." << std::endl;
         std::cout << "3. Deposit to account of your choice." << std::endl;
         std::cout << "4. Withdraw from an account of your choice." << std::endl;
         std::cout << "5. Deposit to all accounts." << std::endl;
         std::cout << "6. Withdraw from all accounts." << std::endl;
         std::cout << "7. Delete all accounts." << std::endl;
-        std::cout << "8. Save your account changes." << std::endl;
+        std::cout << "8. Save your accounts to 'Accounts' file." << std::endl;
         std::cout << "9. Exit" << std::endl;
 
         std::cout << "Enter your choice (1-9): ";

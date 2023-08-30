@@ -1,3 +1,6 @@
+#include <iostream>
+#include <sstream>
+#include <iomanip> 
 #include "TrustAccount.h"
 #include "InsufficientFundsException.h"
 
@@ -26,7 +29,11 @@ bool TrustAccount::Withdraw(double moneyToGet)
 	double maxWithdrawMoney = GetBalance() * (maxWithdrawPercentage / 100.0);
 	if (moneyToGet > maxWithdrawMoney)
 	{
-		std::string errorMessage = "You can't WITHDRAW more than " + std::to_string(maxWithdrawPercentage) + "% (" + std::to_string(maxWithdrawMoney) + "$) of your current balance from account: " + GetName();
+		std::stringstream formattedWithdrawPercentage;
+		std::stringstream formattedWithdrawMoney;
+		formattedWithdrawPercentage << std::fixed << std::setprecision(2) << maxWithdrawPercentage; 
+		formattedWithdrawMoney << std::fixed << std::setprecision(2) << maxWithdrawMoney;
+		std::string errorMessage = "You can't WITHDRAW more than " + formattedWithdrawPercentage.str() + "% (" + formattedWithdrawMoney.str() + "$) of your current balance from account: " + GetName();
 		throw InsufficientFundsException(errorMessage);
 	}
 
@@ -35,7 +42,9 @@ bool TrustAccount::Withdraw(double moneyToGet)
 
 std::string TrustAccount::Print() const
 {
-	return "Trust account [" + GetName() + "] with funds of: " + std::to_string(GetBalance());
+	std::stringstream formattedBalance;
+	formattedBalance << std::fixed << std::setprecision(2) << GetBalance();
+	return "Trust account [" + GetName() + "] with funds of: " + formattedBalance.str() + " $.";
 }
 
 void TrustAccount::ToTextData(std::ostream& os) const
