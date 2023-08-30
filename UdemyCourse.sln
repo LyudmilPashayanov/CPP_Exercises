@@ -23,7 +23,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "OperatorOverloadingExcersic
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "InheritanceExercise", "InheritanceExercise\InheritanceExercise.vcxproj", "{76AFD4E8-6AFE-4797-8065-F715EFD65795}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "PolymorphismAssignment", "PolymorphismAssignment\PolymorphismAssignment.vcxproj", "{1DD6D9B4-5471-4DC2-A459-D9098076716C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Bank Simulator", "BankSimulator\BankSimulator.vcxproj", "{1DD6D9B4-5471-4DC2-A459-D9098076716C}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SmartPointersAssignment", "SmartPointersAssignment\SmartPointersAssignment.vcxproj", "{3DACE9D3-3E47-4D5C-99A8-0D91143CEF37}"
 EndProject

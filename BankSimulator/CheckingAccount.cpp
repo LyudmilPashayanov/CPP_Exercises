@@ -1,0 +1,27 @@
+#include "CheckingAccount.h"
+
+CheckingAccount::CheckingAccount(std::string accountName, double accountBalance) : Account(accountName, accountBalance,checking)
+{
+	std::cout << "Checking account created with name: '" << GetName() << "', balance: '" << GetBalance() <<"'" << std::endl;
+}
+
+bool CheckingAccount::Withdraw(double moneyToGet)
+{
+	moneyToGet += withdrawFee;
+	return Account::Withdraw(moneyToGet);
+}
+
+bool CheckingAccount::Deposit(double moneyToAdd)
+{
+	return Account::Deposit(moneyToAdd);
+}
+
+std::string CheckingAccount::Print() const
+{
+	return "Checking account [" + GetName() + "] with funds of: " + std::to_string(GetBalance());
+}
+
+void CheckingAccount::ToTextData(std::ostream& os) const
+{
+	os << type << " \"" << GetName() << "\" " << GetBalance() << " " << withdrawFee;
+}
